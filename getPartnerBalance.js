@@ -23,7 +23,7 @@ async function getPartnerBalance(ctx) {
 
     let berilgan = lastOp.currency_amount.toLocaleString("uz-UZ");
     let formattedNumber = natija.toLocaleString("uz-UZ");
-    const msgs = `pul ${berilgan}
+    const msgs = `berilgan pul ${berilgan}
     ostatka: ${formattedNumber}
     date: ${update.toLocaleString()}`;
 
