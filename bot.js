@@ -36,7 +36,7 @@ bot.on("callback_query:data", async (ctx) => {
   // console.log(getPartnerBalance(ctx));
   getPartnerBalance(ctx)
     .then((data) => {
-      const message = `${ctx.callbackQuery.text} ${data}`;
+      const message = `${data}`;
       bot.api.sendMessage(ctx.chat.id, message);
     })
     .catch((error) => {
