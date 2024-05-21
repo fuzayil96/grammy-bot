@@ -1,6 +1,6 @@
 const { Bot, InlineKeyboard } = require("grammy");
 const { Menu } = require("@grammyjs/menu");
-const { getPartnerBalance } = require("./modules/getPartnerBalance");
+const { getPartnerBalance } = require("./getPartnerBalance");
 
 const bot = new Bot("7100127126:AAGiYjQ2MEIpW8-zKXXa6pgOygTB4VX1t2w");
 
