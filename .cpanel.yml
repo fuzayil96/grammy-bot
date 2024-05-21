@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/korolev1/repositories/maqola
+    - /bin/cp bot.js $DEPLOYPATH
