@@ -125,7 +125,10 @@ bot.on('message', async (ctx, next) => {
   ) {
     getItem(ctx)
       .then((data) => {
-        bot.api.sendMessage(ctx.chat.id, data, { parse_mode: 'HTML' })
+        bot.api.sendMessage(ctx.chat.id, data, {
+          reply_to_message_id: ctx.message.message_id,
+          parse_mode: 'HTML',
+        })
       })
       .catch((err) => {
         bot.api.sendMessage(
