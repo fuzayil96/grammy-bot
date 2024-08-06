@@ -1,11 +1,12 @@
 import axios from 'axios'
+import 'dotenv/config'
 
 async function signIn(request, requestData) {
   const key = {
-    appToken: 'a96743133d8f4137ab4372e8f723c39b',
-    appKey: '0a3f666411c7cfe714b98e484a777024',
-    apiLogin: 'DB300039-BWDTRZ',
-    sessionId: '4c89d319141c47a18f348fb85b906757',
+    appToken: process.env.APP_TOKEN,
+    appKey: process.env.APP_KEY,
+    apiLogin: process.env.API_LOGIN,
+    sessionId: process.env.SESSION_ID,
   }
 
   const mURL = `https://api.regos.uz/v1/${request}`

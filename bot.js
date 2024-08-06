@@ -3,15 +3,16 @@ import getItem from './modules/items/getItem.js'
 import getPartner from './modules/partners/getPartner.js'
 import getPartnerBalance from './modules/partners/getPartnerBalance.js'
 import { Menu } from '@grammyjs/menu'
+import 'dotenv/config'
 
-const bot = new Bot('7378261589:AAFUux1yMU1-0EzZbbDuVJrUYhpShugKhtU')
+const bot = new Bot(process.env.TOKEN)
 const chatID = '-1002148605315'
 
 let pkeyboard = []
 
 bot.use(async (ctx, next) => {
   if (ctx.chat.type !== 'group' && ctx.chat.type !== 'supergroup') {
-    await ctx.reply('Bot faqat guruhda ishlaydi')
+    await ctx.reply('Not allowed')
     return
   }
   await next()
