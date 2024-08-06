@@ -12,7 +12,7 @@ let pkeyboard = []
 
 bot.use(async (ctx, next) => {
   if (ctx.chat.type !== 'group' && ctx.chat.type !== 'supergroup') {
-    await ctx.reply('Not allowed')
+    await ctx.reply('Not allowed⛔')
     return
   }
   await next()
