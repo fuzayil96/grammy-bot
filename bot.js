@@ -121,7 +121,8 @@ bot.on('message', async (ctx, next) => {
     })
   } else if (
     ctx.message.text !== 'Контрагенты' &&
-    regex.test(ctx.message.text)
+    regex.test(ctx.message.text) &&
+    ctx.message.text.length <= 4
   ) {
     getItem(ctx)
       .then((data) => {
@@ -137,7 +138,8 @@ bot.on('message', async (ctx, next) => {
         )
       })
   } else {
-    bot.api.sendMessage(ctx.chat.id, 'Сиз мавжуд бўлмаган кодни киритдингиз.')
+    return
+    // bot.api.sendMessage(ctx.chat.id, 'Сиз мавжуд бўлмаган кодни киритдингиз.')
   }
 })
 
