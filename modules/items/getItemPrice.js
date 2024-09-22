@@ -1,8 +1,8 @@
-import axios from 'axios'
-import signIn from '../signIn.js'
+import axios from "axios";
+import signIn from "../signIn.js";
 
 async function getItemPrice(id) {
-  let itemId = +id
+  let itemId = +id;
   const requestData = {
     // codes: [itemCode],
     item_ids: [itemId],
@@ -10,13 +10,13 @@ async function getItemPrice(id) {
     //   start_date: 1713479835,
     //   end_date: timeNow,
     //   partner_id: pid,
-  }
+  };
 
-  const request = 'ItemPrice/get'
-  const itemPrice = await signIn(request, requestData)
-  const priceItem = itemPrice.result[0].value.toLocaleString('uz-UZ')
+  const request = "ItemPrice/get";
+  const itemPrice = await signIn(request, requestData);
+  const priceItem = itemPrice.result[0].value.toLocaleString("uz-UZ");
 
-  return priceItem
+  return priceItem;
 }
 
-export default getItemPrice
+export default getItemPrice;
