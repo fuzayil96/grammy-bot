@@ -26,7 +26,6 @@ bot.command("start", (ctx) => {
       resize_keyboard: true,
     },
   });
-  newFunc();
 });
 
 async function addData(pgroupid) {
