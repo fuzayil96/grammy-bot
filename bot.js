@@ -6,19 +6,19 @@ import { Menu } from "@grammyjs/menu";
 import "dotenv/config";
 
 const bot = new Bot(process.env.TOKEN);
-// const chatID = "-1002148605315";
-const chatID = "-1002035800088";
+const chatID = "-1002148605315";
 
 let pkeyboard = [];
 
 bot.use(async (ctx, next) => {
   if (ctx.chat.type !== "group" && ctx.chat.type !== "supergroup") {
     await ctx.reply("Not allowed⛔");
+
     return;
   }
   await next();
 });
-// start
+
 bot.command("start", (ctx) => {
   bot.api.sendMessage(chatID, "Контрагенты тугмасини босинг!", {
     reply_markup: {
@@ -26,6 +26,7 @@ bot.command("start", (ctx) => {
       resize_keyboard: true,
     },
   });
+  newFunc();
 });
 
 async function addData(pgroupid) {
