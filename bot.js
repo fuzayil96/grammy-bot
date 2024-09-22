@@ -6,7 +6,7 @@ import { Menu } from "@grammyjs/menu";
 import "dotenv/config";
 
 const bot = new Bot(process.env.TOKEN);
-const chatID = "-1002148605315";
+const chatID = process.env.GROUP_ID;
 
 let pkeyboard = [];
 
