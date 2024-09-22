@@ -17,7 +17,7 @@ bot.use(async (ctx, next) => {
   }
   await next();
 });
-
+// start
 bot.command("start", (ctx) => {
   bot.api.sendMessage(chatID, "Контрагенты тугмасини босинг!", {
     reply_markup: {
