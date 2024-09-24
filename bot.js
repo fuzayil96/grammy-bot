@@ -6,7 +6,7 @@ import { Menu } from "@grammyjs/menu";
 import "dotenv/config";
 
 const bot = new Bot(process.env.TOKEN);
-const chatID = process.env.GROUP_ID;
+const chatID = "-1002035800088";
 
 let pkeyboard = [];
 
@@ -18,13 +18,18 @@ bot.use(async (ctx, next) => {
   await next();
 });
 
-bot.command("start", (ctx) => {
-  bot.api.sendMessage(chatID, "Контрагенты тугмасини босинг!", {
-    reply_markup: {
-      keyboard: [[{ text: "Контрагенты" }]],
-      resize_keyboard: true,
-    },
-  });
+bot.command("start", async (ctx) => {
+  if (ctx.chat.id == "-1002035800088") {
+    await bot.api.sendMessage(chatID, "Контрагенты тугмасини босинг!", {
+      reply_markup: {
+        keyboard: [[{ text: "Контрагенты" }]],
+        resize_keyboard: true,
+      },
+      chat_id: -1002035800088,
+    });
+  } else {
+    ctx.reply("not allowed @Fuzayl");
+  }
 });
 
 async function addData(pgroupid) {
